@@ -8,7 +8,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from './app.component';
 import { ListsComponent } from './lists/lists.component';
 import { AboutComponent } from './about/about.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+
+import { DataService } from './services/data.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -22,9 +25,10 @@ import { AppRoutingModule } from './/app-routing.module';
     FlexLayoutModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

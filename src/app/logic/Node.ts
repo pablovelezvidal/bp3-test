@@ -1,6 +1,7 @@
 
 export class Node {
-    _id: string;
+    id: string;
+    name: string;
     type: string;
 
     constructor() {}

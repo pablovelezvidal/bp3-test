@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { Node } from '../logic/Node';
 
 @Component({
   selector: 'app-lists',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListsComponent implements OnInit {
 
-  constructor() { }
+  nodes : Array<Node>;
+
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
+    this._dataService.getList('data/3-branching-process')
+      .subscribe(res => {this.nodes = res.nodes});
   }
 
 }

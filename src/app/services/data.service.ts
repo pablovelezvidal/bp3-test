@@ -1,26 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Node } from '../logic/Node';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
 
-  constructor(private http: Http) { }
-  public endpoint = "http://localhost:3000";
+  result:any;
+  api:string = "http://localhost:3000";
 
-  getOne(nodeId: string, callback) {
-    this.http.get(`${this.endpoint}/nodes/${nodeId}`)
-      .subscribe(response => {
-        callback(response.json());
-      })
-  }
+  constructor(private _http: Http) { }
 
-  getList(callback) {
-    this.http.get(`${this.endpoint}/nodes`)
-      .subscribe(response => {
-        callback(response.json());
-      });
-
+  getList(endpoint) {
+    return this._http.get(this.api + '/' + endpoint) .map(result => this.result = result.json());
   }
 
 }

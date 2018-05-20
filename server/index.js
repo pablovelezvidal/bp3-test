@@ -11,6 +11,9 @@ const fileMapping = {
 };
 
 const requestHandler = (request, response) => {
+  //Adding CORS Support
+  response.setHeader('Access-Control-Allow-Headers', 'authorization, content-type');
+  response.setHeader('Access-Control-Allow-Origin', '*');
   let requestUrl = url.parse(request.url);
   console.log(requestUrl.path);
   if (fileMapping.hasOwnProperty(requestUrl.path)) {
