@@ -6,9 +6,6 @@
 /*Material themes*/
 @include angular-material-theme($my-app-theme);
 
-.alternate-theme {
-    @include angular-material-theme($alternate-theme);
-}
 /*Main Classes*/
 body {
     padding: 0;
@@ -36,5 +33,9 @@ h1 {
   
   mat-toolbar-row {
     justify-content: space-between;
+  }
+
+  mat-sidenav-container{
+    height: 100vh;
   }
   
