@@ -1,2 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './sass/variables';
+@import './sass/mixins';
+@import './sass/reset';
+
+
+/*Material themes*/
+@include angular-material-theme($my-app-theme);
+
+.alternate-theme {
+    @include angular-material-theme($alternate-theme);
+}
+/*Main Classes*/
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+  
+h1 {
+    margin: 0;
+}
+
+.right-bottom-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+  }
+
+/*General Material Classes*/
+  mat-card {
+    max-width: 80%;
+    margin: 2em auto;
+    text-align: center;
+  }
+  
+  mat-toolbar-row {
+    justify-content: space-between;
+  }
+  
