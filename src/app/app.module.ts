@@ -9,9 +9,13 @@ import { AppComponent } from './app.component';
 import { ListsComponent } from './lists/lists.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
 
 import { DataService } from './services/data.service';
 import { HttpModule } from '@angular/http';
+
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 
 @NgModule({
@@ -26,7 +30,9 @@ import { HttpModule } from '@angular/http';
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    NgxJsonViewerModule,
+    FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

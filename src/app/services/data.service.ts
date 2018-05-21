@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Node } from '../logic/Node';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
