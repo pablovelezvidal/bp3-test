@@ -12,10 +12,9 @@
         
             <section class="example-section">
               <mat-slide-toggle
-                  class="example-margin"
-                  [color]="color"
-                  [checked]="checked"
-                  [disabled]="disabled">
+                  (change)="filterToHumanTask($event)" 
+                  [checked]="filterTHT"
+                  >
                 Filter!
               </mat-slide-toggle>
             </section>
@@ -31,7 +30,7 @@
             <h2>Nodes</h2>
           </head>
             <div class="container">
-                <mat-card *ngFor="let node of nodes">
+                <mat-card *ngFor="let node of completeJson?.nodes">
                     <mat-card-header>
                       <mat-card-title>{{node.id}}</mat-card-title>
                       <mat-card-subtitle>{{node.name}}</mat-card-subtitle>
@@ -47,7 +46,7 @@
                 <h2>Edges</h2>
               </head>
                 <div class="container">
-                    <mat-card *ngFor="let edge of edges">
+                    <mat-card *ngFor="let edge of completeJson?.edges">
                         <mat-card-header>
                           <mat-card-title>{{edge.from}}</mat-card-title>
                           <mat-card-subtitle>{{edge.to}}</mat-card-subtitle>
@@ -57,7 +56,7 @@
         </mat-tab>
         <mat-tab label="Json">
           <div class="demo-tab-content">
-              <ngx-json-viewer [json]="entireResponse"></ngx-json-viewer>
+              <ngx-json-viewer [(json)]="completeJson" [expanded]="false"></ngx-json-viewer>
           </div>  
         </mat-tab>
       </mat-tab-group>
