@@ -15,16 +15,26 @@ export class ListsComponent implements OnInit {
   edges : Array<Edge>;
   entireResponse: Array<any>;
   endpoints : Array<any> = [
-    {name: "1 - Simple process", path: "/data/1-simple-process"},
-    {name: "2 - Multiple human services", path: "/data/2-multiple-human-services"},
-    {name: "3 - Branching process", path: "/data/3-branching-process"},
-    {name: "4 - Recursive branching process", path: "/data/4-recursive-branching-process"}
+    {name: "1 - Simple process", path: "data/1-simple-process"},
+    {name: "2 - Multiple human services", path: "data/2-multiple-human-services"},
+    {name: "3 - Branching process", path: "data/3-branching-process"},
+    {name: "4 - Recursive branching process", path: "data/4-recursive-branching-process"}
   ];
+  selectedEndpoint: string = "data/3-branching-process";
 
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
-    this._dataService.getList('data/3-branching-process')
+    this.fetchJsonData();
+  }
+
+  changeEndpoint(endpoint) {
+    this.selectedEndpoint = endpoint.path;
+    this.fetchJsonData();
+  }
+
+  fetchJsonData() {
+    this._dataService.getList(this.selectedEndpoint)
       .subscribe(res => {
         this.entireResponse = res;
         this.nodes = res.nodes; 

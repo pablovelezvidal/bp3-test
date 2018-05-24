@@ -1,15 +1,30 @@
 <mat-card>
     <mat-radio-group class="endpoint-radio-group" [(ngModel)]="selectedEndpoint">
-        <mat-radio-button class="endpoint-radio-button" *ngFor="let endpoint of endpoints" [value]="selectedEndpoint">
-          {{endpoint.path}}
+        <mat-radio-button class="endpoint-radio-button" *ngFor="let endpoint of endpoints" 
+        (click)="changeEndpoint(endpoint)" [value]="endpoint.path">
+          {{endpoint.name}}
         </mat-radio-button>
       </mat-radio-group>
-      <div class="endpoint-selected-value">The endpoint you are using is: {{selectedEndpoint}}</div>
+      <div class="endpoint-selected-value">The endpoint you are using is: <span class="highlighted">{{selectedEndpoint}}</span></div>
+      <mat-card class="filter">
+          <mat-card-content>
+            <h2 class="example-h2">Filter just to human task</h2>
+        
+            <section class="example-section">
+              <mat-slide-toggle
+                  class="example-margin"
+                  [color]="color"
+                  [checked]="checked"
+                  [disabled]="disabled">
+                Filter!
+              </mat-slide-toggle>
+            </section>
+          </mat-card-content>
+        </mat-card>
 </mat-card>
 
 <mat-card>
     <mat-card-content>
-      <h2 class="example-h2">Json response for <strong>/3-branching-process</strong></h2>
       <mat-tab-group class="demo-tab-group">
         <mat-tab label="Cards">
           <head>
