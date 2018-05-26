@@ -1,64 +1,64 @@
 <main>
-    <mat-radio-group class="endpoint-radio-group" [(ngModel)]="selectedEndpoint">
-        <mat-radio-button class="endpoint-radio-button" *ngFor="let endpoint of endpoints" 
-        (click)="changeEndpoint(endpoint)" [value]="endpoint.path" >
-          {{endpoint.name}}
-        </mat-radio-button>
-      </mat-radio-group>
-      <div class="endpoint-selected-value">The endpoint you are using is: <span class="highlighted">{{selectedEndpoint}}</span></div>
-      <mat-card class="filter">
-          <mat-card-content>
-            <h2 class="example-h2">Filter just to human task</h2>
-        
-            <section class="example-section">
-              <mat-slide-toggle
-                  (change)="filterToHumanTask($event)" 
-                  [checked]="filterTHT"
-                  >
-                Filter!
-              </mat-slide-toggle>
-            </section>
-          </mat-card-content>
-        </mat-card>
+  <mat-radio-group class="endpoint-radio-group" [(ngModel)]="selectedEndpoint">
+    <mat-radio-button class="endpoint-radio-button" *ngFor="let endpoint of endpoints" (click)="changeEndpoint(endpoint)" [value]="endpoint.path">
+      {{endpoint.name}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div class="endpoint-selected-value">The endpoint you are using is:
+    <span class="highlighted">{{selectedEndpoint}}</span>
+  </div>
+  <mat-card class="filter">
     <mat-card-content>
-      <mat-icon [hidden]="!isLoading">spinner</mat-icon>
-      <mat-tab-group class="demo-tab-group">
-        <mat-tab label="Cards">
-          <head>
-            <h2>Nodes</h2>
-          </head>
-            <div class="container">
-                <mat-card *ngFor="let node of completeJson?.nodes">
-                    <mat-card-header>
-                      <mat-card-title>{{node.id}}</mat-card-title>
-                      <mat-card-subtitle>{{node.name}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-icon>{{iconsList[node.type]}}</mat-icon>
-                    <mat-card-content>
-                      <p>
-                        {{node.type}}
-                      </p>
-                    </mat-card-content>
-                  </mat-card>
-            </div>
-            <head>
-                <h2>Edges</h2>
-              </head>
-                <div class="container">
-                    <mat-card *ngFor="let edge of completeJson?.edges">
-                        <mat-card-header>
-                          <mat-card-title>{{edge.from}}</mat-card-title>
-                          <mat-card-subtitle>{{edge.to}}</mat-card-subtitle>
-                        </mat-card-header>
-                      </mat-card>
-                </div>
-        </mat-tab>
-        <mat-tab label="Json">
-          <div class="container">
-              <ngx-json-viewer [(json)]="completeJson" [expanded]="false"></ngx-json-viewer>
-          </div>  
-        </mat-tab>
-      </mat-tab-group>
+      <h2 class="example-h2">Filter just to human task</h2>
+      <section class="example-section">
+        <mat-slide-toggle (change)="filterToHumanTask($event)" [checked]="filterTHT">
+          Filter!
+        </mat-slide-toggle>
+      </section>
     </mat-card-content>
-  </main>
-  
+  </mat-card>
+  <mat-card-content>
+    <mat-icon [hidden]="!isLoading">spinner</mat-icon>
+    <mat-tab-group class="demo-tab-group">
+      <mat-tab label="Cards">
+        <div class="container" fxLayout fxLayout.sm="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+          <div class="" fxFlex="45%">
+            <head>
+              <h2>Nodes</h2>
+            </head>
+            <mat-card *ngFor="let node of completeJson?.nodes">
+              <mat-card-header>
+                <span>{{node.id}}</span>
+                <span>{{node.name}}</span>
+              </mat-card-header>
+              <mat-icon>{{iconsList[node.type]}}</mat-icon>
+              <mat-card-content>
+                <p>
+                  {{node.type}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="" fxFlex="45%">
+            <head>
+              <h2>Edges</h2>
+            </head>
+            <div class="container">
+              <mat-card *ngFor="let edge of completeJson?.edges">
+                <mat-card-content>
+                    <mat-chip color="primary" selected="true">From: {{edge.from}}</mat-chip>
+                    <mat-chip color="accent" selected="true">To: {{edge.to}}</mat-chip>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Json">
+        <div class="container">
+          <ngx-json-viewer [(json)]="completeJson" [expanded]="false"></ngx-json-viewer>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</main>
