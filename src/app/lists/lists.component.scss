@@ -21,3 +21,20 @@
     font-weight: 800;
     padding: 0 .5em;
 }
+
+.chip {
+    max-width: 50px;
+    padding: 1em;
+    border-radius: 50%;
+    margin: 1em;
+    color: white;
+    font-weight: 500;
+  }
+
+  .chip-from {
+    background-color: #607d8b;
+  }
+
+  .chip-to {
+    background-color: #e91e63;
+  }

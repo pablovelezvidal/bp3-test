@@ -13,6 +13,18 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0 .1em;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin: 0 .1em;
+}
+
 main {
   max-width: 80%;
   margin: .5em auto;
@@ -29,7 +41,8 @@ main {
 
 /*General Material Classes*/
   mat-card {
-    max-width: 75%;
+    max-width: 85%;
+    max-height: 50px;
     margin: .5em auto;
     text-align: center;
   }
@@ -46,10 +59,4 @@ main {
     font-family: 'Material Icons' !important;
   }
 
-  mat-chip {
-    max-width: 200px;
-    padding: 1em;
-    border-radius: 50%;
-    margin: 1em;
-  }
   

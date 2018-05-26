@@ -21,33 +21,33 @@
     <mat-icon [hidden]="!isLoading">spinner</mat-icon>
     <mat-tab-group class="demo-tab-group">
       <mat-tab label="Cards">
-        <div class="container" fxLayout fxLayout.sm="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-          <div class="" fxFlex="45%">
-            <head>
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+          <div fxFlex="50%">
+            <header>
               <h2>Nodes</h2>
-            </head>
-            <mat-card *ngFor="let node of completeJson?.nodes">
-              <mat-card-header>
-                <span>{{node.id}}</span>
-                <span>{{node.name}}</span>
+            </header>
+            <mat-card *ngFor="let node of completeJson?.nodes" fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+              <mat-card-header fxFlex="30%">
+                <mat-card-subtitle>Id: <span class="highlighted">{{node.id}}</span></mat-card-subtitle>
+                <mat-card-title>Name: <span class="highlighted">{{node.name}}</span></mat-card-title>
               </mat-card-header>
-              <mat-icon>{{iconsList[node.type]}}</mat-icon>
-              <mat-card-content>
+              <mat-card-content fxFlex="70%">
+                  <mat-icon>{{iconsList[node.type]}}</mat-icon>
                 <p>
                   {{node.type}}
                 </p>
               </mat-card-content>
             </mat-card>
           </div>
-          <div class="" fxFlex="45%">
-            <head>
+          <div fxFlex="50%">
+            <header>
               <h2>Edges</h2>
-            </head>
+            </header>
             <div class="container">
               <mat-card *ngFor="let edge of completeJson?.edges">
-                <mat-card-content>
-                    <mat-chip color="primary" selected="true">From: {{edge.from}}</mat-chip>
-                    <mat-chip color="accent" selected="true">To: {{edge.to}}</mat-chip>
+                <mat-card-content fxLayout fxLayoutAlign="center" fxLayoutGap.xs="0">
+                    <div class="chip chip-from">From: {{edge.from}}</div>
+                    <div class="chip chip-to">To: {{edge.to}}</div>
                 </mat-card-content>
               </mat-card>
             </div>

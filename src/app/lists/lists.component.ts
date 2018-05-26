@@ -27,7 +27,6 @@ export class ListsComponent implements OnInit {
     HumanTask: "accessibility"
   }
 
-
   selectedEndpoint: string = "data/3-branching-process";
 
   //filter to human task condition

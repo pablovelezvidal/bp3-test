@@ -1,0 +1,9 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.about-info-container {
+    padding: 1em;
+    text-align: left;
+    box-shadow: 2px 2px 5px -2px #ddd;
+    line-height: 1.1em;
+}
