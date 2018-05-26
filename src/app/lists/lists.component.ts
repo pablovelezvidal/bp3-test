@@ -10,7 +10,7 @@ import { DataService } from '../services/data.service';
 export class ListsComponent implements OnInit {
   //entire json response from the server
   completeJson;
-  
+
   //datasource endpoints list
   endpoints : Array<any> = [
     {name: "1 - Simple process", path: "data/1-simple-process"},
@@ -18,6 +18,15 @@ export class ListsComponent implements OnInit {
     {name: "3 - Branching process", path: "data/3-branching-process"},
     {name: "4 - Recursive branching process", path: "data/4-recursive-branching-process"}
   ];
+
+  iconsList = {
+    Start: "play_circle_outline",
+    End: "stop",
+    ServiceTask: "android",
+    Gateway: "compare_arrows",
+    HumanTask: "accessibility"
+  }
+
 
   selectedEndpoint: string = "data/3-branching-process";
 
