@@ -1,7 +1,7 @@
-<mat-card>
+<main>
     <mat-radio-group class="endpoint-radio-group" [(ngModel)]="selectedEndpoint">
         <mat-radio-button class="endpoint-radio-button" *ngFor="let endpoint of endpoints" 
-        (click)="changeEndpoint(endpoint)" [value]="endpoint.path">
+        (click)="changeEndpoint(endpoint)" [value]="endpoint.path" >
           {{endpoint.name}}
         </mat-radio-button>
       </mat-radio-group>
@@ -20,9 +20,6 @@
             </section>
           </mat-card-content>
         </mat-card>
-</mat-card>
-
-<mat-card>
     <mat-card-content>
       <mat-tab-group class="demo-tab-group">
         <mat-tab label="Cards">
@@ -35,6 +32,7 @@
                       <mat-card-title>{{node.id}}</mat-card-title>
                       <mat-card-subtitle>{{node.name}}</mat-card-subtitle>
                     </mat-card-header>
+                    <mat-icon>home</mat-icon>
                     <mat-card-content>
                       <p>
                         {{node.type}}
@@ -55,11 +53,11 @@
                 </div>
         </mat-tab>
         <mat-tab label="Json">
-          <div class="demo-tab-content">
+          <div class="container">
               <ngx-json-viewer [(json)]="completeJson" [expanded]="false"></ngx-json-viewer>
           </div>  
         </mat-tab>
       </mat-tab-group>
     </mat-card-content>
-  </mat-card>
+  </main>
   

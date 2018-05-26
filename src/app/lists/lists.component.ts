@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 export class ListsComponent implements OnInit {
   //entire json response from the server
   completeJson;
+  
   //datasource endpoints list
   endpoints : Array<any> = [
     {name: "1 - Simple process", path: "data/1-simple-process"},

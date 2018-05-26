@@ -12,9 +12,12 @@ body {
     margin: 0;
     font-family: Roboto, sans-serif;
 }
-  
-h1 {
-    margin: 0;
+
+main {
+  max-width: 80%;
+  margin: .5em auto;
+  text-align: center;
+  background-color: #fff;
 }
 
 .right-bottom-fixed {
@@ -26,8 +29,8 @@ h1 {
 
 /*General Material Classes*/
   mat-card {
-    max-width: 80%;
-    margin: 2em auto;
+    max-width: 75%;
+    margin: .5em auto;
     text-align: center;
   }
   
@@ -37,5 +40,9 @@ h1 {
 
   mat-sidenav-container{
     height: 100vh;
+  }
+
+  mat-icon{
+    font-family: 'Material Icons' !important;
   }
   
