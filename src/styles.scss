@@ -14,15 +14,25 @@ body {
 }
 
 h2 {
-  font-size: 1.2em;
-  font-weight: 500;
-  margin: 0 .1em;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: .1em 0;
 }
 
 h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: .1em 0;
+}
+
+h4 {
   font-size: 1.1em;
   font-weight: 400;
   margin: 0 .1em;
+}
+
+p {
+  margin: .1em 0;
 }
 
 main {
@@ -38,6 +48,21 @@ main {
     right: 20px;
     color: white;
   }
+
+/* App General Styles */
+.label {
+  font-weight: 600;
+}
+
+.info-text {
+  font-style: italic;
+  color: #3e3e3f;
+
+}
+
+.space-above {
+  margin-top: .5em;
+}
 
 /*General Material Classes*/
   mat-card {

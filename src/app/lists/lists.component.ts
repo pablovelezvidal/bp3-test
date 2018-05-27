@@ -27,7 +27,7 @@ export class ListsComponent implements OnInit {
     HumanTask: "accessibility"
   }
 
-  selectedEndpoint: string = "data/3-branching-process";
+  selectedEndpoint = this.endpoints[2];
 
   //filter to human task condition
   filterTHT: boolean = false;
@@ -42,7 +42,7 @@ export class ListsComponent implements OnInit {
     /**
      * Changes the endpoint where the data is going to come from
      */
-    this.selectedEndpoint = endpoint.path;
+    this.selectedEndpoint = endpoint;
     this.fetchJsonData();
   }
 
@@ -50,7 +50,7 @@ export class ListsComponent implements OnInit {
     /**
      * retrieves the data from the server
      */
-    this._dataService.getList(this.selectedEndpoint)
+    this._dataService.getList(this.selectedEndpoint.path)
       .subscribe(res => {
         this.completeJson = res;
         //If the option to filter is active, it inmediately filters the information
@@ -100,3 +100,15 @@ export class ListsComponent implements OnInit {
 
 }
 
+
+/**
+ * var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+
+// Put the object into storage
+localStorage.setItem('testObject', JSON.stringify(testObject));
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('testObject');
+
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
+ */

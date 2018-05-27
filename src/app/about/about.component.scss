@@ -5,5 +5,19 @@
     padding: 1em;
     text-align: left;
     box-shadow: 2px 2px 5px -2px #ddd;
-    line-height: 1.1em;
+    line-height: 1.5em;
+}
+
+.item-list {
+    padding: .5em 1em;
+    list-style-type: decimal;
+    font-style:italic; font-family:Georgia, Times, serif; color:#bfe1f1;
+
+    li p{
+        padding:8px; 
+        font-style:normal; 
+        font-family:Arial; 
+        color: #000; 
+        border-left: 3px solid #999;
+    }
 }

@@ -1,11 +1,11 @@
 <main>
-  <mat-radio-group class="endpoint-radio-group" [(ngModel)]="selectedEndpoint">
+  <mat-radio-group class="endpoint-radio-group" [(ngModel)]="selectedEndpoint.path">
     <mat-radio-button class="endpoint-radio-button" *ngFor="let endpoint of endpoints" (click)="changeEndpoint(endpoint)" [value]="endpoint.path">
       {{endpoint.name}}
     </mat-radio-button>
   </mat-radio-group>
   <div class="endpoint-selected-value">The endpoint you are using is:
-    <span class="highlighted">{{selectedEndpoint}}</span>
+    <span class="highlighted">{{selectedEndpoint.path}}</span>
   </div>
   <mat-card class="filter">
     <mat-card-content>
