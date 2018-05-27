@@ -10,15 +10,15 @@
   <mat-card class="filter">
     <mat-card-content>
       <h2 class="example-h2">Filter just to human task</h2>
-      <section class="example-section">
-        <mat-slide-toggle (change)="filterToHumanTask($event)" [checked]="filterTHT">
+      <section class="filter-section" fxLayout="column">
+        <mat-slide-toggle (change)="filterToHumanTask($event)" [checked]="filterTHT" fxFlexAlign="center">
           Filter!
         </mat-slide-toggle>
+        <mat-spinner *ngIf="isLoading === true" fxFlexAlign="center"></mat-spinner >
       </section>
     </mat-card-content>
   </mat-card>
   <mat-card-content>
-    <mat-icon [hidden]="!isLoading">spinner</mat-icon>
     <mat-tab-group class="demo-tab-group">
       <mat-tab label="Cards">
         <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" 

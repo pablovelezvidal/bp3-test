@@ -57,6 +57,8 @@ export class ListsComponent implements OnInit {
   //filter to human task condition
   filterTHT: boolean = false;
 
+  isLoading: boolean = false;
+
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
@@ -75,6 +77,7 @@ export class ListsComponent implements OnInit {
     /**
      * retrieves the data from the server
      */
+    this.isLoading = true;
     this._dataService.getList(this.selectedEndpoint.path)
       .subscribe(res => {
         this.completeJson = res;
@@ -82,6 +85,7 @@ export class ListsComponent implements OnInit {
         if (this.filterTHT) {
           this.filterNodesTHT();
         }
+        this.isLoading = false;
       });
   }
 
