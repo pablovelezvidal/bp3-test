@@ -13,10 +13,10 @@ export class ListsComponent implements OnInit {
 
   //datasource endpoints list
   endpoints : Array<any> = [
-    {name: "1 - Simple process", path: "data/1-simple-process"},
-    {name: "2 - Multiple human services", path: "data/2-multiple-human-services"},
-    {name: "3 - Branching process", path: "data/3-branching-process"},
-    {name: "4 - Recursive branching process", path: "data/4-recursive-branching-process"}
+    {name: "1 - Simple process", path: "b/5b0b35000fb4d74cdf23e7f5"},
+    {name: "2 - Multiple human services", path: "b/5b0b35df7a973f4ce5784918"},
+    {name: "3 - Branching process", path: "b/5b0b360ec2e3344ccd96c313"},
+    {name: "4 - Recursive branching process", path: "b/5b0b3633c83f6d4cc734a01e"}
   ];
 
   iconsList = {

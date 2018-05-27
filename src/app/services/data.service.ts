@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class DataService {
 
   result:any;
-  api:string = "http://localhost:3000";
+  api:string = "https://api.jsonbin.io";
 
   constructor(private _http: Http) { }
 
