@@ -21,8 +21,9 @@
     <mat-icon [hidden]="!isLoading">spinner</mat-icon>
     <mat-tab-group class="demo-tab-group">
       <mat-tab label="Cards">
-        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-          <div fxFlex="50%">
+        <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" 
+        fxLayoutGap="10px" fxLayoutGap.xs="0" >
+          <div fxFlex="50%" [@nodes]="completeJson?.nodes.length">
             <header>
               <h2>Nodes</h2>
             </header>
@@ -39,7 +40,7 @@
               </mat-card-content>
             </mat-card>
           </div>
-          <div fxFlex="50%">
+          <div fxFlex="50%" [@nodes]="completeJson?.edges.length">
             <header>
               <h2>Edges</h2>
             </header>
