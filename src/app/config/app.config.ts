@@ -11,5 +11,6 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {    
-     apiUrl : "https://api.jsonbin.io",
+
+     apiUrl : "https://api.jsonbin.io/b",
 };
