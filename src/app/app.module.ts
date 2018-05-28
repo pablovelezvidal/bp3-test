@@ -17,6 +17,9 @@ import { HttpModule } from '@angular/http';
 
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
+/* config values */
+import { APP_CONFIG, AppConfig } from './config/app.config';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
     NgxJsonViewerModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService, ,
+    { provide: APP_CONFIG, useValue: AppConfig }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

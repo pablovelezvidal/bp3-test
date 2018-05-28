@@ -5,7 +5,7 @@ $white: #fff;
 $grey: #DADADA;
 
 /*main theme classes*/
-$my-app-primary: mat-palette($mat-blue-grey);
+$my-app-primary: mat-palette($mat-blue-grey, 400);
 $my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
 $my-app-warn:    mat-palette($mat-deep-orange);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
