@@ -64,6 +64,13 @@ main {
   margin-top: .5em;
 }
 
+.main-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: .1em 0;
+  color: #006699;
+}
+
 /*General Material Classes*/
   mat-card {
     max-width: 85%;
@@ -71,6 +78,7 @@ main {
     margin: .5em auto;
     text-align: center;
   }
+
   
   mat-toolbar-row {
     justify-content: space-between;
