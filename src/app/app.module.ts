@@ -37,8 +37,7 @@ import { APP_CONFIG, AppConfig } from './config/app.config';
     NgxJsonViewerModule,
     FormsModule
   ],
-  providers: [DataService, ,
-    { provide: APP_CONFIG, useValue: AppConfig }],
+  providers: [DataService, { provide: APP_CONFIG, useValue: AppConfig }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
